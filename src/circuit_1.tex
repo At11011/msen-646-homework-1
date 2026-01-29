@@ -1,0 +1,10 @@
+\begin{circuitikz}[american]
+    % Draw the circuit - starting from bottom left, going clockwise
+    \draw (0,0) 
+        to[battery1, l=$E_1$] (0,3)
+        to[battery1, l=$E_2$] (0,6)
+        to[short] (4,6)
+        to[R, l=$R_1$] (4,3)
+        to[R, l=$R_2$] (4,0)
+        to[short] (0,0);
+\end{circuitikz}

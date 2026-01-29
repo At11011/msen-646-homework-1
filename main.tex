@@ -14,10 +14,11 @@ Please find the magnitudes missing for each electrical circuit expressed.
 \begin{enumerate}[a]
     \item $I_1, I_2, I_\text{total}$ (across the resistance), $V_2, R_\text{total}$?
 
-        \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.6\textwidth]{./assets/fig_1.png}
-\end{figure}
+    \begin{figure}[h]
+        \centering
+        % \includegraphics[width=0.4\textwidth]{./assets/fig_1.png}
+        \input{./src/circuit_1.tex}
+    \end{figure}
 
 \begin{itemize}
     \item $E_1 = \SI{8}{\volt}$
@@ -26,6 +27,26 @@ Please find the magnitudes missing for each electrical circuit expressed.
     \item $R_2 = \SI{4}{\ohm}$
 \end{itemize}
 
+\boxedanswer{
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Component & $\Delta V$ & $I$ & R \\
+        \hline
+        $E_1$ & \SI{8}{\volt} & - & - \\
+        \hline
+        $E_2$ & \SI{4}{\volt} & - & - \\
+        \hline
+        $R_1$ & \SI{-1}{\volt} & \SI{-1}{\ampere} & \SI{2}{\ohm} \\
+        \hline
+        $R_2$ & \SI{-1}{\volt} & \SI{-1}{\ampere} & \SI{4}{\ohm} \\
+        \hline
+    \end{tabular}
+
+    \begin{align*}
+        
+    \end{align*}
+}
 
 \pagebreak
 

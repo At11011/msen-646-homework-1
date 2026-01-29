@@ -6,6 +6,7 @@ main.log
 main.pdf
 main.synctex.gz
 main.xdv
+main.synctex*
 _minted-main/
 svg-inkscape/
 pdflatex*
