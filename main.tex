@@ -1,141 +1,365 @@
 \input{./src/main.sty}
 % Additional SI unit for Fahrenheit
 \DeclareSIUnit\fahrenheit{\degree F}
+\sisetup{range-phrase = --}
+\sisetup{range-units = single}
 
 \begin{document}
 
 % Include title page
 \input{./src/titlepage.tex}
 
-\section{Problem 1}
-
 Please find the magnitudes missing for each electrical circuit expressed.
 
 \begin{enumerate}[a]
-    \item $I_1, I_2, I_\text{total}$ (across the resistance), $V_2, R_\text{total}$?
+    % Problem 1{{{
+  \item $I_1, I_2, I_\text{total}$ (across the resistance), $V_2,
+    R_\text{total}$?
 
     \begin{figure}[h]
-        \centering
-        % \includegraphics[width=0.4\textwidth]{./assets/fig_1.png}
-        \input{./src/circuit_1.tex}
+      \centering
+      \input{./src/circuit_1.tex}
     \end{figure}
 
-\begin{itemize}
-    \item $E_1 = \SI{8}{\volt}$
-    \item $E_2 = \SI{4}{\volt}$
-    \item $R_1 = \SI{2}{\ohm}$
-    \item $R_2 = \SI{4}{\ohm}$
-\end{itemize}
+    \begin{itemize}
+      \item $E_1 = \SI{8}{\volt}$
+      \item $E_2 = \SI{4}{\volt}$
+      \item $R_1 = \SI{2}{\ohm}$
+      \item $R_2 = \SI{4}{\ohm}$
+    \end{itemize}
 
-\boxedanswer{
-    \centering
-    \begin{tabular}{|c|c|c|c|}
+    \boxedanswer{
+      \centering
+      \begin{tabular}{|c|c|c|c|}
         \hline
         Component & $\Delta V$ & $I$ & R \\
         \hline
-        $E_1$ & \SI{8}{\volt} & - & - \\
+        $E_1$ & \SI{8}{\volt} & \SI{2}{\ampere} & \SI{0}{\ohm} \\
         \hline
-        $E_2$ & \SI{4}{\volt} & - & - \\
+        $E_2$ & \SI{4}{\volt} & \SI{2}{\ampere} & \SI{0}{\ohm} \\
         \hline
-        $R_1$ & \SI{-1}{\volt} & \SI{-1}{\ampere} & \SI{2}{\ohm} \\
+        $R_1$ & \SI{4}{\volt} & \SI{2}{\ampere} & \SI{2}{\ohm} \\
         \hline
-        $R_2$ & \SI{-1}{\volt} & \SI{-1}{\ampere} & \SI{4}{\ohm} \\
+        $R_2$ & \SI{8}{\volt} & \SI{2}{\ampere} & \SI{4}{\ohm} \\
         \hline
-    \end{tabular}
+      \end{tabular}
 
-    \begin{align*}
-        
-    \end{align*}
-}
+      \begin{align*}
+        E_\text{total} &= \SI{8}{\volt} + \SI{4}{\volt} \\
+        E_\text{total} &= \SI{12}{\volt} \\
+        R_\text{total} &= \SI{2}{\ohm} + \SI{4}{\ohm} = \SI{6}{\ohm} \\
+        I_\text{total} &= I_1 = I_2 = \frac{V_\text{total}}{R_\text{total}}\\
+        I_\text{total} &= \frac{\SI{12}{\volt}}{\SI{6}{\ohm}} \\
+        \Aboxed{I_\text{total} = I_1 = I_2 &= \SI{2}{\ampere}} \\
+        \Delta V_1 &= I_1R_1 \\
+        \Delta V_1 &= (\SI{2}{\ampere})(\SI{2}{\ohm}) \\
+        \Aboxed{\Delta V_1 &= \SI{4}{\volt}} \\
+        \Delta V_2 &= (\SI{2}{\ampere})(\SI{4}{\ohm}) \\
+        \Aboxed{\Delta V_2 &= \SI{8}{\volt}}
+      \end{align*}
+    }
 
-\pagebreak
+    \pagebreak% }}}
+    % {{{ Problem 2
+  \item $R_\text{total}, I_1, I_2, I_3, V_1, V_2, V_3$?
 
-    \item $R_\text{total}, I_1, I_2, I_3, V_1, V_2, V_3$?
+    \begin{figure}[h]
+      \centering
+      \input{./src/circuit_2.tex}
+    \end{figure}
 
-        \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.6\textwidth]{./assets/fig_2.png}
-\end{figure}
+    \begin{itemize}
+      \item $E_\text{total} = \SI{5}{\volt}$
+      \item $R_1 = \SI{10}{\ohm}$
+      \item $R_2 = \SI{20}{\ohm}$
+      \item $R_3 = \SI{30}{\ohm}$
+    \end{itemize}
 
-\begin{itemize}
-    \item $E_\text{total} = \SI{5}{\volt}$
-    \item $R_2 = \SI{20}{\ohm}$
-    \item $R_3 = \SI{30}{\ohm}$
-\end{itemize}
+    \boxedanswer{
+      \centering
+      \begin{tabular}{|c|c|c|c|}
+        \hline
+        Component & $\Delta V$ & $I$ & R \\
+        \hline
+        $E$ & \SI{5}{\volt} & \SI{0.0833}{\ampere} & \SI{0}{\ohm} \\
+        \hline
+        $R_1$ & \SI{0.833}{\volt} & \SI{0.0833}{\ampere} & \SI{10}{\ohm} \\
+        \hline
+        $R_2$ & \SI{1.667}{\volt} & \SI{0.0833}{\ampere} & \SI{20}{\ohm} \\
+        \hline
+        $R_3$ & \SI{2.5}{\volt} & \SI{0.0833}{\ampere} & \SI{30}{\ohm} \\
+        \hline
+      \end{tabular}
+      \begin{align*}
+        R_\text{total} &= R_1 + R_2 + R_3 \\
+        R_\text{total} &= \SI{10}{\ohm} + \SI{20}{\ohm} + \SI{30}{\ohm} \\
+        \Aboxed{R_\text{total} &= \SI{60}{\ohm}} \\
+        I_\text{total} &= I_1 = I_2 = I_3 =
+        \frac{E_\text{total}}{R_\text{total}}\\
+        I_\text{total} &= \frac{\SI{5}{\volt}}{\SI{60}{\ohm}} \\
+        \Aboxed{I_\text{total} = I_1 = I_2 = I_3 &= \SI{0.0833}{\ampere}} \\
+        V_1 &= I_1R_1 \\
+        V_1 &= (\SI{0.0833}{\ampere})(\SI{10}{\ohm}) \\
+        \Aboxed{V_1 &= \SI{0.833}{\volt}} \\
+        V_2 &= I_2R_2 \\
+        V_2 &= (\SI{0.0833}{\ampere})(\SI{20}{\ohm}) \\
+        \Aboxed{V_2 &= \SI{1.667}{\volt}} \\
+        V_3 &= I_3R_3 \\
+        V_3 &= (\SI{0.0833}{\ampere})(\SI{30}{\ohm}) \\
+        \Aboxed{V_3 &= \SI{2.5}{\volt}}
+      \end{align*}
+    }
 
-\pagebreak
+    \pagebreak
+    % }}}
+    % Problem 3{{{
+  \item $I_\text{total}, I_1, I_2, I_3, R_\text{total}$?
 
-    \item $I_\text{total}, I_1, I_2, I_3, R_\text{total}$?
+    \begin{figure}[h]
+      \centering
+      \input{./src/circuit_3.tex}
+    \end{figure}
 
-        \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.6\textwidth]{./assets/fig_3.png}
-\end{figure}
+    \begin{itemize}
+      \item $E_1 = \SI{10}{\volt}$
+      \item $E_2 = \SI{20}{\volt}$
+      \item $R_1 = \SI{5}{\ohm}$
+      \item $R_2 = \SI{10}{\ohm}$
+      \item $R_3 = \SI{1}{\ohm}$
+      \item $I_4 = \SI{10}{\milli\ampere}$
+    \end{itemize}
+    \boxedanswer{
+      \centering
+      \begin{tabular}{|c|c|c|c|}
+        \hline
+        Component & $\Delta V$ & $I$ & R \\
+        \hline
+        $E_1$ & \SI{10}{\volt} & \SI{32}{\ampere} & \SI{0}{\ohm} \\
+        \hline
+        $E_2$ & \SI{20}{\volt} & \SI{32}{\ampere} & \SI{0}{\ohm} \\
+        \hline
+        $R_1$ & \SI{10}{\volt} & \SI{2}{\ampere} & \SI{5}{\ohm} \\
+        \hline
+        $R_2$ & \SI{20}{\volt} & \SI{2}{\ampere} & \SI{10}{\ohm} \\
+        \hline
+        $R_3$ & \SI{30}{\volt} & \SI{30}{\ampere} & \SI{1}{\ohm} \\
+        \hline
+        $R_4$ & \SI{30}{\volt} & \SI{10}{\milli\ampere} & \SI{3}{\kilo\ohm} \\
+        \hline
+      \end{tabular}
+      \begin{align*}
+        E_\text{total} &= E_1 + E_2 \\
+        E_\text{total} &= \SI{10}{\volt} + \SI{20}{\volt} \\
+        E_\text{total} &= \SI{30}{\volt} \\
+        \text{In parallel: } \Delta V_\text{each branch} &=
+        E_\text{total} = \SI{30}{\volt} \\
+        R_{1,2} &= R_1 + R_2 = \SI{5}{\ohm} + \SI{10}{\ohm} = \SI{15}{\ohm} \\
+        I_1 &= I_2 = \frac{\Delta V}{R_{1,2}} =
+        \frac{\SI{30}{\volt}}{\SI{15}{\ohm}} \\
+        \Aboxed{I_1 = I_2 &= \SI{2}{\ampere}} \\
+        \Aboxed{I_3 &= \frac{\SI{30}{\volt}}{\SI{1}{\ohm}} =
+        \SI{30}{\ampere}} \\
+        R_4 &= \frac{\Delta V}{I_4} =
+        \frac{\SI{30}{\volt}}{\SI{10}{\milli\ampere}} \\
+        R_4 &= \SI{3}{\kilo\ohm} \\
+        I_\text{total} &= I_1 + I_3 + I_4 \\
+        I_\text{total} &= \SI{2}{\ampere} + \SI{30}{\ampere} +
+        \SI{10}{\milli\ampere} \\
+        \Aboxed{I_\text{total} &= \SI{32.01}{\ampere} \approx
+        \SI{32}{\ampere}} \\
+        \frac{1}{R_\text{total}} &= \frac{1}{R_{1,2}} + \frac{1}{R_3}
+        + \frac{1}{R_4} \\
+        \frac{1}{R_\text{total}} &= \frac{1}{\SI{15}{\ohm}} +
+        \frac{1}{\SI{1}{\ohm}} + \frac{1}{\SI{3000}{\ohm}} \\
+        \frac{1}{R_\text{total}} &= 0.0667 + 1 + 0.000333 =
+        \SI{1.067}{\per\ohm} \\
+        \Aboxed{R_\text{total} &= \SI{0.938}{\ohm}}
+      \end{align*}
+    }
+    \pagebreak% }}}
+    % Problem 4{{{
+  \item $R_\text{total}, V_\text{total}, I_\text{total}, I_1, I_2, I_3$?
 
-\begin{itemize}
-    \item $E_1 = \SI{10}{\volt}$
-    \item $E_2 = \SI{20}{\volt}$
-    \item $R_1 = \SI{5}{\ohm}$
-    \item $R_2 = \SI{10}{\ohm}$
-    \item $R_3 = \SI{1}{\ohm}$
-    \item $I_4 = \SI{10}{\milli\ampere}$
-\end{itemize}
+    \begin{figure}[h]
+      \centering
+      \input{./src/circuit_4.tex}
+    \end{figure}
 
-\pagebreak
+    \begin{itemize}
+      \item $E_1 = \SI{20}{\volt}$
+      \item $R_1 = \SI{10}{\ohm}$
+      \item $R_2 = \SI{20}{\ohm}$
+      \item $R_3 = \SI{5}{\ohm}$
+    \end{itemize}
 
-\item $R_\text{total}, V_\text{total}, I_\text{total}, I_1, I_2, I_3$?
-
-        \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.6\textwidth]{./assets/fig_4.png}
-\end{figure}
-
-\begin{itemize}
-    \item $E_1 = \SI{20}{\volt}$
-    \item $R_1 = \SI{10}{\ohm}$
-    \item $R_2 = \SI{20}{\ohm}$
-    \item $R_3 = \SI{5}{\ohm}$
-\end{itemize}
-
-\pagebreak
-
-\item Perform the following reference conversions
+    \pagebreak
+    \boxedanswer{
+      \centering
+      \begin{tabular}{|c|c|c|c|}
+        \hline
+        Component & $\Delta V$ & $I$ & R \\
+        \hline
+        $E_1$ & \SI{20}{\volt} & \SI{8}{\ampere} & \SI{0}{\ohm} \\
+        \hline
+        $R_1$ & \SI{20}{\volt} & \SI{2}{\ampere} & \SI{10}{\ohm} \\
+        \hline
+        $R_2$ & \SI{20}{\volt} & \SI{1}{\ampere} & \SI{20}{\ohm} \\
+        \hline
+        $R_3$ & \SI{20}{\volt} & \SI{4}{\ampere} & \SI{5}{\ohm} \\
+        \hline
+      \end{tabular}
+      \begin{align*}
+        V_\text{total} &= E_1 \\
+        \Aboxed{V_\text{total} &= \SI{20}{\volt}} \\
+        I_1 &= \frac{V_\text{total}}{R_1} \\
+        I_1 &= \frac{\SI{20}{\volt}}{\SI{10}{\ohm}} \\
+        \Aboxed{I_1 &= \SI{2}{\ampere}} \\
+        I_2 &= \frac{V_\text{total}}{R_2} \\
+        I_2 &= \frac{\SI{20}{\volt}}{\SI{20}{\ohm}} \\
+        \Aboxed{I_2 &= \SI{1}{\ampere}} \\
+        I_3 &= \frac{V_\text{total}}{R_3} \\
+        I_3 &= \frac{\SI{20}{\volt}}{\SI{5}{\ohm}} \\
+        \Aboxed{I_3 &= \SI{4}{\ampere}} \\
+        I_\text{total} &= I_1 + I_2 + I_3 \\
+        I_\text{total} &= \SI{2}{\ampere} + \SI{1}{\ampere} + \SI{4}{\ampere} \\
+        \Aboxed{I_\text{total} &= \SI{8}{\ampere}} \\
+        \frac{1}{R_\text{total}} &= \frac{1}{R_1} + \frac{1}{R_2} +
+        \frac{1}{R_3} \\
+        \frac{1}{R_\text{total}} &= \frac{1}{\SI{10}{\ohm}} +
+        \frac{1}{\SI{20}{\ohm}} + \frac{1}{\SI{5}{\ohm}} \\
+        \frac{1}{R_\text{total}} &= \frac{2}{20} + \frac{1}{20} +
+        \frac{4}{20} = \frac{7}{20} \\
+        \Aboxed{R_\text{total} &= \SI{2.857}{\ohm}}
+      \end{align*}
+    }
+    % }}}
+    % Problem 5{{{
+  \item Perform the following reference conversions
 
     \begin{enumerate}
-        \item Convert \SI{150}{\milli\volt} SCE to CSE
-        \item Convert \SI{-150}{\milli\volt} SCE to CSE
-        \item Convert \SI{-1.0}{\volt} CSE to the equivalent Ag/AgCl reference electrode
-        \item Convert \SI{-0.75}{\volt} to the equivalent Zn reference electrode
-        \item Covert \SI{0.00}{\volt} Zn to the equivalent CSE
-        \item Convert \SI{-0.05}{V} Zn to the equivalent Ag/AgCl reference electrode
+      \item Convert \SI{150}{\milli\volt} SCE to CSE
+      \item Convert \SI{-150}{\milli\volt} SCE to CSE
+      \item Convert \SI{-1.0}{\volt} CSE to the equivalent Ag/AgCl
+        reference electrode
+      \item Convert \SI{-0.75}{\volt} to the equivalent Zn reference electrode
+      \item Covert \SI{0.00}{\volt} Zn to the equivalent CSE
+      \item Convert \SI{-0.05}{V} Zn to the equivalent Ag/AgCl
+        reference electrode
     \end{enumerate}
 
-\pagebreak
-
-    \item In a laboratory test, the corrosion current density of a steel AISI
-        1010 sample is \SI{50}{\milli\ampere\per\centi\meter\squared}, can you 
-        calculate the corrosion rate for the alloy?
+    \boxedanswer{
+      \begin{align*}
+        \text{(a) Convert } & \SI{150}{\milli\volt} \text{ SCE to CSE:} \\
+        E_{\text{CSE}} &= E_{\text{SCE}} + (V_{\text{SCE}} - V_{\text{CSE}}) \\
+        E_{\text{CSE}} &= \SI{150}{\milli\volt} +
+        (\SI{241}{\milli\volt} - \SI{316}{\milli\volt}) \\
+        E_{\text{CSE}} &= \SI{150}{\milli\volt} - \SI{75}{\milli\volt} \\
+        \Aboxed{E_{\text{CSE}} &= \SI{75}{\milli\volt}} \\
+        \\
+        \text{(b) Convert } & \SI{-150}{\milli\volt} \text{ SCE to CSE:} \\
+        E_{\text{CSE}} &= E_{\text{SCE}} + (V_{\text{SCE}} - V_{\text{CSE}}) \\
+        E_{\text{CSE}} &= \SI{-150}{\milli\volt} +
+        (\SI{241}{\milli\volt} - \SI{316}{\milli\volt}) \\
+        E_{\text{CSE}} &= \SI{-150}{\milli\volt} - \SI{75}{\milli\volt} \\
+        \Aboxed{E_{\text{CSE}} &= \SI{-225}{\milli\volt}} \\
+        \\
+        \text{(c) Convert } & \SI{-1.0}{\volt} \text{ CSE to Ag/AgCl:} \\
+        E_{\text{Ag/AgCl}} &= E_{\text{CSE}} + (V_{\text{CSE}} -
+        V_{\text{Ag/AgCl}}) \\
+        E_{\text{Ag/AgCl}} &= \SI{-1.0}{\volt} + (\SI{0.316}{\volt} -
+        \SI{0.197}{\volt}) \\
+        E_{\text{Ag/AgCl}} &= \SI{-1.0}{\volt} + \SI{0.119}{\volt} \\
+        \Aboxed{E_{\text{Ag/AgCl}} &= \SI{-0.881}{\volt}} \\
+        \\
+        \text{(d) Convert } & \SI{-0.75}{\volt} \text{ CSE to Zn:} \\
+        E_{\text{Zn}} &= E_{\text{CSE}} + (V_{\text{CSE}} - V_{\text{Zn}}) \\
+        E_{\text{Zn}} &= \SI{-0.75}{\volt} + (\SI{0.316}{\volt} -
+        \SI{-0.763}{\volt}) \\
+        E_{\text{Zn}} &= \SI{-0.75}{\volt} + \SI{1.079}{\volt} \\
+        \Aboxed{E_{\text{Zn}} &= \SI{0.329}{\volt}} \\
+        \\
+        \text{(e) Convert } & \SI{0.00}{\volt} \text{ Zn to CSE:} \\
+        E_{\text{CSE}} &= E_{\text{Zn}} + (V_{\text{Zn}} - V_{\text{CSE}}) \\
+        E_{\text{CSE}} &= \SI{0.00}{\volt} + (\SI{-0.763}{\volt} -
+        \SI{0.316}{\volt}) \\
+        E_{\text{CSE}} &= \SI{0.00}{\volt} - \SI{1.079}{\volt} \\
+        \Aboxed{E_{\text{CSE}} &= \SI{-1.079}{\volt}} \\
+        \\
+        \text{(f) Convert } & \SI{-0.05}{\volt} \text{ Zn to Ag/AgCl:} \\
+        E_{\text{Ag/AgCl}} &= E_{\text{Zn}} + (V_{\text{Zn}} -
+        V_{\text{Ag/AgCl}}) \\
+        E_{\text{Ag/AgCl}} &= \SI{-0.05}{\volt} + (\SI{-0.763}{\volt}
+        - \SI{0.197}{\volt}) \\
+        E_{\text{Ag/AgCl}} &= \SI{-0.05}{\volt} - \SI{0.960}{\volt} \\
+        \Aboxed{E_{\text{Ag/AgCl}} &= \SI{-1.010}{\volt}}
+      \end{align*}
+    }% }}}
+    % Problem 6{{{
+    \pagebreak
+  \item In a laboratory test, the corrosion current density of a steel AISI
+    1010 sample is \SI{50}{\milli\ampere\per\centi\meter\squared}, can you
+    calculate the corrosion rate for the alloy?
 
     Assume the alloy contains the following composition:
 
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.6\textwidth]{./assets/fig_5.png}
-    \end{figure}
+    \begin{table}[ht]
+      \centering
+      \begin{tabular}{|l|c|c|}
+        \hline
+        SI. No. & Elements  & Content \\
+        \hline
+        1 & Carbon & \qtyrange{0.080}{0.13}{\percent} \\
+        2 & Silicon & $\le$\SI{0.010}{\percent} \\
+        3 & Manganese & \qtyrange{0.30}{0.60}{\percent} \\
+        4 & Sulphur & $\le$\SI{0.050}{\percent} \\
+        5 & Phosphorous & $\le$\SI{0.040}{\percent} \\
+        6 & Iron & \qtyrange{99.08}{99.52}{\percent} \\
+        \hline
+      \end{tabular}
+    \end{table}
 
-    NOTE: Be sure what elements will be anodic or will dissolve in order to 
+    NOTE: Be sure what elements will be anodic or will dissolve in order to
     make the final calculation of the alloy.
+    \boxedanswer{
+      \begin{align*}
+        \text{Mass fractions:} \quad f_\text{Fe} &= 0.993, \quad
+        f_\text{Mn} = 0.0045 \\
+        \text{Equivalent weights:} \quad \text{EW}_\text{Fe} &=
+        \frac{55.845}{2} = \SI{27.923}{\gram\per\equiv} \\
+        \text{EW}_\text{Mn} &= \frac{54.938}{2} =
+        \SI{27.469}{\gram\per\equiv} \\
+        \frac{1}{\text{EW}_\text{alloy}} &=
+        \frac{f_\text{Fe}}{\text{EW}_\text{Fe}} +
+        \frac{f_\text{Mn}}{\text{EW}_\text{Mn}} \\
+        \frac{1}{\text{EW}_\text{alloy}} &= \frac{0.993}{27.923} +
+        \frac{0.0045}{27.469} \\
+        \frac{1}{\text{EW}_\text{alloy}} &= 0.03556 + 0.00016 = 0.03572 \\
+        \Aboxed{\text{EW}_\text{alloy} &= \SI{27.997}{\gram\per\equiv}} \\
+        \rho_\text{steel} &= \SI{7.87}{\gram\per\centi\meter\cubed} \\
+        i_\text{corr} &= \SI{50}{\milli\ampere\per\centi\meter\squared} \\
+        K &=
+        \SI{3.27e-3}{\milli\meter\per\year\per\milli\ampere\per\centi\meter\squared}
+        \\
+        \text{CR} &= K \times \frac{i_\text{corr} \times
+        \text{EW}_\text{alloy}}{\rho} \\
+        \text{CR} &= 3.27 \times 10^{-3} \times \frac{50 \times 27.997}{7.87} \\
+        \text{CR} &= 3.27 \times 10^{-3} \times 177.87 \\
+        \Aboxed{\text{CR} &= \SI{0.582}{\milli\meter\per\year}}
+      \end{align*}
+      \pagebreak
+    }% }}}
+    % Problem 7
 
-\item If an iron pipeline is immersed in a soil that is $\mathrm{pH}=8$, what 
-    electrode potential must be maintained to prevent corrosion of the bare 
-    metal versus the \ch{Cu/CuSO4} electrode? If you have a steel structure 
+  \item If an iron pipeline is immersed in a soil that is $\mathrm{pH}=8$, what
+    electrode potential must be maintained to prevent corrosion of the bare
+    metal versus the \ch{Cu/CuSO4} electrode? If you have a steel structure
     that is buried in soil and is located thermodynamically at point A, what
     is the best strategy to have a "corrosion healthy structure"? Name two
     strategies.
 
     \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.6\textwidth]{./assets/fig_6.png}
+      \centering
+      \includegraphics[width=0.6\textwidth]{./assets/fig_6.png}
     \end{figure}
 
 \end{enumerate}
